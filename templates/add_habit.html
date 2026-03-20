@@ -12,18 +12,18 @@
 
 </head>
 
-<body style="background:#000080;" class="d-flex flex-column min-vh-100">
+<body style="background:#000080;" class=" container-fluid d-flex flex-column min-vh-100">
 
 <!-- NAVBAR -->
 
-<nav class="navbar navbar-dark" style="background:#2563EB;">
-<div class="container-fluid">
+<nav class="navbar fs-1 navbar-dark" style="background:#2563EB;">
+<div class="container-fluid fs-1">
 
-<a class="navbar-brand" href="/dashboard">SmartHabit</a>
+<a class="navbar-brand fs-2" href="/dashboard">SmartHabit</a>
 
 <div class="container-fluid" >
-<a href="/dashboard" class="btn btn-light btn-sm">Dashboard</a>
-<a href="/" class="btn btn-danger btn-sm">Logout</a>
+<a href="/dashboard" class=" fs-2 btn btn-light btn-sm">Dashboard</a>
+<a href="/" class="fs-2 btn btn-danger btn-sm">Logout</a>
 </div>
 
 </div>
@@ -35,32 +35,32 @@
 
 <div class="col-md-6">
 
-<div class="card shadow p-4">
+<div class=" container-fluid fs-2 card shadow p-4">
 
 <h3 class="text-center mb-4">Create New Habit</h3>
 
-<form action="/add_habit" method="POST">
+<form  action="/add_habit" method="POST">
 
 <!-- Habit Name -->
 
 <div class="mb-3 container-fluid">
 <label class="form-label">Habit Name</label>
-<input type="text" name="habit_name" class="form-control" placeholder="Example: Drink Water" required>
+<input type="text" name="habit_name" class="fs-2 form-control" placeholder="Example: Drink Water" required>
 </div>
 
 <!-- Habit Description -->
 
 <div class="mb-3 container-fluid" >
 <label class="form-label">Description</label>
-<textarea name="description" class="form-control" rows="3"
+<textarea name="description" class="fs-2 form-control" rows="3"
 placeholder="Why is this habit important?"></textarea>
 </div>
 
 <!-- Category -->
 
-<div class="mb-3 container-fluid">
+<div class="mb-3 fs-2 container-fluid">
 <label class="form-label">Category</label>
-<select name="category" class="form-control">
+<select name="category" class="fs-2 form-control">
 
 <option>Health</option>
 <option>Fitness</option>
@@ -73,18 +73,18 @@ placeholder="Why is this habit important?"></textarea>
 
 <!-- Reminder Time -->
 
-<div class="mb-3">
+<div class="mb-3 fs-2">
 <label class="form-label">Reminder Time</label>
-<input type="time" name="reminder_time" class="form-control">
+<input type="time" name="reminder_time" class=" fs-2 form-control">
 <small class="text-muted">Choose the time you want to be reminded</small>
 </div>
 
 <!-- Priority -->
 
-<div class="mb-3">
+<div class="mb-3 fs-2">
 <label class="form-label">Priority</label>
 
-<select name="priority" class="form-control">
+<select name="priority" class=" fs-2 form-control">
 <option>Low</option>
 <option>Medium</option>
 <option>High</option>
@@ -94,7 +94,7 @@ placeholder="Why is this habit important?"></textarea>
 
 <!-- Submit -->
 
-<button type="submit" class="btn btn-success w-100">
+<button type="submit" class="fs-2 btn btn-success w-100">
 Add Habit
 </button>
 
