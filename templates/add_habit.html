@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,56 +10,98 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<style>
+
+body{
+position:relative;
+}
+
+.carousel-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.carousel-bg img{
+height:100vh;
+object-fit:cover;
+filter:brightness(60%);
+}
+
+</style>
 </head>
 
-<body style="background:#000080;" class=" container-fluid d-flex flex-column min-vh-100">
+<body class="container-fluid d-flex flex-column min-vh-100">
 
-<!-- NAVBAR -->
+
+<div id="habitCarousel" class="carousel slide carousel-fade carousel-bg" data-bs-ride="carousel" data-bs-interval="4000">
+
+<div class="carousel-inner">
+
+<div class="carousel-item active">
+<img src="https://img.freepik.com/premium-photo/portrait-young-female-artist-painting-picture-her-studio_1029322-5726.jpg" class="d-block w-100">
+</div>
+
+<div class="carousel-item">
+<img src="https://img.freepik.com/premium-photo/2-man-fighting-punching-sports-boxing_978521-38756.jpg" class="d-block w-100">
+</div>
+
+<div class="carousel-item">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" class="d-block w-100">
+</div>
+
+</div>
+
+</div>
+
 
 <nav class="navbar fs-1 navbar-dark" style="background:#2563EB;">
 <div class="container-fluid fs-1">
 
 <a class="navbar-brand fs-2" href="/dashboard">SmartHabit</a>
 
-<div class="container-fluid" >
-<a href="/dashboard" class=" fs-2 btn btn-light btn-sm">Dashboard</a>
+<div>
+<a href="/dashboard" class="fs-2 btn btn-light btn-sm">Dashboard</a>
 <a href="/" class="fs-2 btn btn-danger btn-sm">Logout</a>
 </div>
 
 </div>
 </nav>
 
+
 <div class="container-fluid mt-5">
 
-<div class="row justify-content-center" >
+<div class="row justify-content-center">
 
 <div class="col-md-6">
 
-<div class=" container-fluid fs-2 card shadow p-4">
+<div class="container-fluid fs-2 card shadow p-4">
 
 <h3 class="text-center mb-4">Create New Habit</h3>
 
-<form  action="/add_habit" method="POST">
+<form action="/add_habit" method="POST">
 
-<!-- Habit Name -->
 
-<div class="mb-3 container-fluid">
+<div class="mb-3">
 <label class="form-label">Habit Name</label>
 <input type="text" name="habit_name" class="fs-2 form-control" placeholder="Example: Drink Water" required>
 </div>
 
-<!-- Habit Description -->
 
-<div class="mb-3 container-fluid" >
+<div class="mb-3">
 <label class="form-label">Description</label>
 <textarea name="description" class="fs-2 form-control" rows="3"
 placeholder="Why is this habit important?"></textarea>
 </div>
 
-<!-- Category -->
 
-<div class="mb-3 fs-2 container-fluid">
+
+<div class="mb-3">
 <label class="form-label">Category</label>
+
 <select name="category" class="fs-2 form-control">
 
 <option>Health</option>
@@ -71,20 +113,18 @@ placeholder="Why is this habit important?"></textarea>
 </select>
 </div>
 
-<!-- Reminder Time -->
 
-<div class="mb-3 fs-2">
+<div class="mb-3">
 <label class="form-label">Reminder Time</label>
-<input type="time" name="reminder_time" class=" fs-2 form-control">
+<input type="time" name="reminder_time" class="fs-2 form-control">
 <small class="text-muted">Choose the time you want to be reminded</small>
 </div>
 
-<!-- Priority -->
 
-<div class="mb-3 fs-2">
+<div class="mb-3">
 <label class="form-label">Priority</label>
 
-<select name="priority" class=" fs-2 form-control">
+<select name="priority" class="fs-2 form-control">
 <option>Low</option>
 <option>Medium</option>
 <option>High</option>
@@ -92,7 +132,6 @@ placeholder="Why is this habit important?"></textarea>
 
 </div>
 
-<!-- Submit -->
 
 <button type="submit" class="fs-2 btn btn-success w-100">
 Add Habit
@@ -108,6 +147,9 @@ Add Habit
 
 </div>
 
-</body>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
+
