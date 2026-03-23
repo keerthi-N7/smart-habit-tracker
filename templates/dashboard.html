@@ -139,6 +139,25 @@ data:[1,2,3,2,4]
 });
 
 </script>
+<script>
+
+function checkReminder(){
+
+    fetch("/check_notification")
+    .then(response => response.json())
+    .then(data => {
+
+        if(data.message !== ""){
+            alert(data.message);
+        }
+
+    });
+
+}
+
+setInterval(checkReminder, 30000); // checks every 30 seconds
+
+</script>
 
 </body>
 </html>

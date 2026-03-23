@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-
+from datetime import datetime
 app = Flask(__name__)
 
 # TEMPORARY STORAGE (for MVP)
@@ -102,7 +102,17 @@ def complete_habit(index):
 @app.route("/success")
 def success():
     return render_template("success.html")
+#reminder
+@app.route("/check_notification")
+def check_notification():
 
+    current_time = datetime.now().strftime("%H:%M")
+
+    for habit in habits:
+        if habit["reminder_time"] == current_time and not habit["completed"]:
+            return {"message": f"Reminder: Complete {habit['habit_name']}"}
+
+    return {"message": ""}
 
 # RUN SERVER
 if __name__ == "__main__":
